@@ -1,0 +1,42 @@
+<app-root></app-root>
+<h2>EMPLOYEE REGISTRATION</h2>
+ <form [formGroup]="contactForm" (ngsubmit)="onsubmit()">
+  <mat-form-field>
+  <input matInput placeholder="Firstname" formControlName="firstName">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+  <input matInput placeholder="Lastname" formControlName="lastName">
+  </mat-form-field>
+  <br>
+ <!-- <mat-form-field>
+  <input matInput placeholder="Email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+</mat-form-field>
+   <mat-form-field>
+    <input matInput placeholder="Enter your email" [formControl]="email" [(ngModel)]="userObj.emailid" name="emailid" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>     -->
+  <mat-form-field>
+  <input matInput placeholder="Email" formControlName="emailId">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+  <input matInput placeholder="MobileNumber" formControlName="mobileNumber">
+  </mat-form-field>
+  <br>
+<mat-form-field>
+  <mat-select placeholder="Designation" formControlName="Designation" >
+     <mat-option *ngFor="let a of role">{{a}}</mat-option>
+    <mat-option value="QA">QA</mat-option>
+    <mat-option value="Testing">Testing</mat-option>
+    <mat-option value="Accounting">Accounting</mat-option>
+    <mat-option value="Developer">Developer </mat-option>
+    <mat-option value="Trainee">Trainee </mat-option> 
+    </mat-select>
+</mat-form-field>
+  <br>
+  <button mat-raised-button [disabled]="!contactForm.valid">submit</button>
+
+
+
+
